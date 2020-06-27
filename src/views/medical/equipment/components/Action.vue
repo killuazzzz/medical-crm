@@ -187,11 +187,11 @@
             </el-form-item>
 
             <el-form-item label="设备照片" prop="licenseNumber">
-              <el-input v-model="formList.licenseNumber" />
+              <el-input v-model="formList.a" />
             </el-form-item>
 
             <el-form-item label="设备铭牌照片" prop="licenseNumber">
-              <el-input v-model="formList.licenseNumber" />
+              <el-input v-model="formList.b" />
             </el-form-item>
 
             <el-form-item label="是否计量器具" prop="measuringTool">
