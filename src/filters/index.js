@@ -79,3 +79,21 @@ export function enumValue(value, list) {
   const result = list.find(item => item.value === value)
   return result ? result.label : ''
 }
+
+// type: h 小时、m 分钟、 s 秒
+export function millisecondToOther(value, type = 'h', places = 1) {
+  if (!value) {
+    return value
+  }
+  const divisorList = {
+    h: 1000 * 60 * 60,
+    m: 1000 * 60,
+    s: 1000
+  }
+  const unitList = {
+    h: '小时',
+    m: '分',
+    s: '秒'
+  }
+  return (value / divisorList[type]).toFixed(places) + unitList[type]
+}

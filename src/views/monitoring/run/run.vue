@@ -45,8 +45,16 @@
             {{ scope.row.specs }} {{ scope.row.model }}
           </template>
         </el-table-column>
-        <el-table-column label="核定工时" prop="approvedMillis" />
-        <el-table-column label="值班时长" prop="dutyMillis" />
+        <el-table-column label="核定工时" prop="approvedMillis">
+          <template slot-scope="scope">
+            {{ scope.row.approvedMillis | millisecondToOther }}
+          </template>
+        </el-table-column>
+        <el-table-column label="值班时长" prop="dutyMillis">
+          <template slot-scope="scope">
+            {{ scope.row.dutyMillis | millisecondToOther }}
+          </template>
+        </el-table-column>
         <el-table-column label="开机次数" prop="openCount" />
         <el-table-column label="关机次数" prop="closeCount" />
         <el-table-column label="操作" prop="action" fixed="right" width="150">

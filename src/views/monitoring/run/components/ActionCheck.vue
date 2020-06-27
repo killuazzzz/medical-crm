@@ -9,19 +9,19 @@
     <el-form ref="formList" :model="formList" name="actionForm" :inline="true" label-position="top">
 
       <el-form-item label="关机时长">
-        <span>{{ formList.openMillis }} | {{ formList.openPercent }}%</span>
+        <span>{{ formList.closeMillis | millisecondToOther }} | {{ formList.closePercent }}%</span>
       </el-form-item>
 
       <el-form-item label="开机时长">
-        <span>{{ formList.openMillis }} | {{ formList.openPercent }}%</span>
+        <span>{{ formList.openMillis | millisecondToOther }} | {{ formList.openPercent }}%</span>
       </el-form-item>
 
       <el-form-item label="工作时长">
-        <span>{{ formList.workMillis }} | {{ formList.workPercent }}%</span>
+        <span>{{ formList.workMillis | millisecondToOther }} | {{ formList.workPercent }}%</span>
       </el-form-item>
 
       <el-form-item label="待机时长">
-        <span>{{ formList.waitMillis }} | {{ formList.waitPercent }}%</span>
+        <span>{{ formList.waitMillis | millisecondToOther }} | {{ formList.waitPercent }}%</span>
       </el-form-item>
 
       <el-form-item label="关机次数">
@@ -45,7 +45,7 @@
       </el-form-item>
 
       <el-form-item label="闲置时长">
-        <span>{{ formList.freeMillis }}</span>
+        <span>{{ formList.freeMillis | millisecondToOther }}</span>
       </el-form-item>
 
       <el-form-item label="闲置率">
@@ -63,7 +63,7 @@
       <el-table-column prop="endTime" label="结束时间" />
       <el-table-column prop="holdTime" label="持续时间">
         <template slot-scope="scope">
-          {{ scope.row.holdTime | addUnit('ms') }}
+          {{ scope.row.holdTime | millisecondToOther }}
         </template>
       </el-table-column>
       <el-table-column prop="workStatus" label="状态">
@@ -121,6 +121,6 @@ export default {
 
 <style lang="scss" scoped>
 form[name="actionForm"] .el-form-item {
-  width: 100px;
+  width: 150px;
 }
 </style>
