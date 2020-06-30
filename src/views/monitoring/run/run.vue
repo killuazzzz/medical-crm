@@ -121,9 +121,9 @@ export default {
       this.listQuery = {
         page: 1,
         limit: 10,
-        date: '',
         cityId: '',
-        orgId: ''
+        orgId: '',
+        date: new Date()
       }
     },
     getCityList() {

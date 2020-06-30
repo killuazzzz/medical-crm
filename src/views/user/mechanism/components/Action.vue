@@ -2,13 +2,13 @@
   <el-dialog
     :title="dialogTitle[dialogType]"
     :visible.sync="dialogVisible"
-    width="800px"
+    width="820px"
     :close-on-click-modal="false"
     @closed="closeEvent"
     @open="openEvent"
   >
     <div>
-      <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="top" :disabled="dialogType === 2">
+      <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="left" label-width="150px" :disabled="dialogType === 2">
 
         <el-form-item label="机构名称" prop="institutionName">
           <el-input v-model="formList.institutionName" />
@@ -18,7 +18,7 @@
           <el-input v-model="formList.institutionNickname" />
         </el-form-item>
 
-        <el-form-item label="医疗机构执业许可证代码" prop="licenseCode">
+        <el-form-item label="机构执业许可证" prop="licenseCode">
           <el-input v-model="formList.licenseCode" />
         </el-form-item>
 
@@ -32,7 +32,7 @@
           />
         </el-form-item>
 
-        <el-form-item label="卫生机构（组织）分类代码" prop="classificationCode">
+        <el-form-item label="机构(组织)分类代码" prop="classificationCode">
           <el-input v-model="formList.classificationCode" />
         </el-form-item>
 

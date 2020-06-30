@@ -2,13 +2,13 @@
   <el-dialog
     title="耗材信息新增"
     :visible.sync="dialogVisible"
-    width="80%"
+    width="800px"
     :close-on-click-modal="false"
     :append-to-body="true"
     @close="closeEvent"
   >
     <div>
-      <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="top">
+      <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="left" label-width="130px">
 
         <el-form-item label="附属设备名称" prop="coName">
           <el-input v-model="formList.coName" />

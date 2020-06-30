@@ -2,19 +2,19 @@
   <el-dialog
     :title="dialogTitle[dialogType]"
     :visible.sync="dialogVisible"
-    width="80%"
+    width="850px"
     :close-on-click-modal="false"
     @closed="closeEvent"
     @opened="openEvent"
   >
     <div>
-      <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="top" :disabled="dialogType === 2">
+      <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="left" label-width="150px" :disabled="dialogType === 2">
         <el-collapse v-model="collapseActives">
           <el-collapse-item title="设备基础信息" name="1">
+
             <el-form-item label="设备名称" prop="eqName">
               <el-input v-model="formList.eqName" />
             </el-form-item>
-
             <el-form-item label="规格" prop="specs">
               <el-input v-model="formList.specs" />
             </el-form-item>
@@ -30,7 +30,7 @@
             </el-form-item>
 
             <el-form-item label="原值" prop="originalValue">
-              <el-input v-model="formList.originalValue" />
+              <el-input v-model="formList.originalValue" type="number" />
             </el-form-item>
 
             <el-form-item label="产地" prop="area">
@@ -152,13 +152,13 @@
               <el-input v-model="formList.installClaim" />
             </el-form-item>
 
-            <el-form-item label="大型医用设备类别" prop="largeEqCategory">
+            <el-form-item label="大型设备类别" prop="largeEqCategory">
               <el-select v-model="formList.largeEqCategory">
                 <el-option v-for="item in largeEqCategoryList" :key="item.id" :value="item.id" :label="item.name" />
               </el-select>
             </el-form-item>
 
-            <el-form-item label="大型医用设备阶梯分型" prop="largeEqType">
+            <el-form-item label="大型设备阶梯分型" prop="largeEqType">
               <el-select v-model="formList.largeEqType">
                 <el-option v-for="item in largeEqTypeList" :key="item.value" :value="item.value" :label="item.label" />
               </el-select>
@@ -234,14 +234,15 @@
             </el-form-item> -->
           </el-collapse-item>
           <el-collapse-item title="设备效率与效益设置" name="2">
+
             <el-form-item label="设备值班时长（日）" prop="dutyDuration">
-              <el-input v-model="formList.dutyDuration">
+              <el-input v-model="formList.dutyDuration" type="number" class="input-append">
                 <template slot="append">小时</template>
               </el-input>
             </el-form-item>
 
             <el-form-item label="设备核定工时（日）" prop="approvedHours">
-              <el-input v-model="formList.approvedHours">
+              <el-input v-model="formList.approvedHours" type="number" class="input-append">
                 <template slot="append">小时</template>
               </el-input>
             </el-form-item>
@@ -250,16 +251,16 @@
               <el-input v-model="formList.existingNum" />
             </el-form-item>
 
-            <el-form-item label="使用功能数" prop="useNum">
+            <el-form-item label="使用功能数" prop="useNum" type="number">
               <el-input v-model="formList.useNum" />
             </el-form-item>
 
             <el-form-item label="设备工作量预测数" prop="workloadNum">
-              <el-input v-model="formList.workloadNum" />
+              <el-input v-model="formList.workloadNum" type="number" />
             </el-form-item>
 
-            <el-form-item label="设备科研工作量预测数" prop="researchNum">
-              <el-input v-model="formList.researchNum" />
+            <el-form-item label="科研工作量预测数" prop="researchNum">
+              <el-input v-model="formList.researchNum" type="number" />
             </el-form-item>
 
           </el-collapse-item>
@@ -376,7 +377,13 @@ export default {
       }
     },
     closeEvent() {
-      this.formList = {}
+      this.formList = {
+        fiscalClassification: 6,
+        ledgerCategory: 1,
+        unit: '台',
+        dutyDuration: 24,
+        approvedHours: 8
+      }
     },
     openEvent() {
       if (this.$refs.formList) {

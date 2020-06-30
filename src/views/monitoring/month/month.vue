@@ -7,31 +7,22 @@
             <el-form-item label="日期">
               <el-date-picker
                 v-model="listQuery.date"
-                type="date"
+                type="month"
                 placeholder="选择日期"
-                format="yyyy-MM-dd"
-                value-format="yyyy-MM-dd"
+                format="yyyy-MM"
               />
             </el-form-item>
           </el-col>
           <el-col :lg="8" :xl="6">
             <el-form-item label="医疗机构">
-              <el-select v-model="listQuery.mechanismId">
+              <el-select v-model="listQuery.mechanismId" @change="getEqiumentList">
                 <el-option v-for="item in mechanismList" :key="item.id" :value="item.id" :label="item.institutionName" />
               </el-select>
             </el-form-item>
           </el-col>
           <el-col :lg="8" :xl="6">
             <el-form-item label="设备">
-              <el-select
-                v-model="listQuery.terminalId"
-                filterable
-                remote
-                reserve-keyword
-                placeholder="请输入关键词"
-                :remote-method="getEqiumentList"
-                :loading="loading"
-              >
+              <el-select v-model="listQuery.terminalId" filterable>
                 <el-option v-for="item in equipmentList" :key="item.terminalId" :value="item.terminalId" :label="item.eqName" />
               </el-select>
             </el-form-item>
@@ -128,18 +119,19 @@ export default {
       fetchAllMechanism().then(res => {
         this.mechanismList = res.data
         this.listQuery.mechanismId = this.mechanismList[0].id
+        this.getEqiumentList(this.listQuery.mechanismId)
       })
     },
     getEqiumentList(query) {
       if (query !== '') {
-        this.loading = true
         fetchEqiumentList({
-          orgId: this.listQuery.mechanismId,
-          eqName: query
+          orgId: query
         }).then(res => {
           this.equipmentList = res.data
-        }).finally(() => {
-          this.loading = false
+          this.listQuery.terminalId = res.data.length > 0 ? res.data[0].terminalId : ''
+          if (this.listQuery.terminalId) {
+            this.getList()
+          }
         })
       }
     }

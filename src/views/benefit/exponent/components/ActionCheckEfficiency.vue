@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    :title="titleList[type]"
+    :title="title"
     :visible.sync="dialogVisible"
     width="500px"
     :close-on-click-modal="false"
@@ -32,19 +32,16 @@ export default {
       formList: {},
       rules: {},
       chartData: [],
-      type: 1,
-      titleList: {
-        1: '烟台市32台大型医用设备使用效率分析图',
-        2: '全院医用设备使用效率分析图'
-      }
+      title: ''
     }
   },
   methods: {
     openDialog(type, data) {
+      const efficiency = data.efficiency
       const chartData = []
-      for (const key in data) {
-        if (data.hasOwnProperty(key)) {
-          const element = data[key]
+      for (const key in efficiency) {
+        if (efficiency.hasOwnProperty(key)) {
+          const element = efficiency[key]
           chartData.push({
             name: keyList[key],
             count: element
@@ -52,7 +49,7 @@ export default {
         }
       }
       this.chartData = chartData
-      this.type = type
+      this.title = type === 1 ? `${data.cityName}${data.bootNum}台大型医用设备使用效率分析图` : '全院医用设备使用效率分析图'
       this.dialogVisible = true
     },
     closeEvent() {

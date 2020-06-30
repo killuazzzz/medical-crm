@@ -4,9 +4,9 @@
       <el-form ref="formList" :model="listQuery" name="listQuery" label-width="100px" label-position="left">
         <el-row :gutter="20">
           <el-col :lg="8" :xl="6">
-            <el-form-item label="是否绑定终端">
-              <el-select v-model="listQuery.bindTerminal">
-                <el-option v-for="item in bindTerminalList" :key="item.value" :value="item.value" :label="item.label" />
+            <el-form-item label="是否绑定设备">
+              <el-select v-model="listQuery.bindEquipment">
+                <el-option v-for="item in bindEquipmentList" :key="item.value" :value="item.value" :label="item.label" />
               </el-select>
             </el-form-item>
           </el-col>
@@ -36,7 +36,7 @@
 
 <script>
 import { fetchMaintenanceList } from '@/api/terminal/maintenance'
-const bindTerminalList = [
+const bindEquipmentList = [
   { value: true, label: '已绑定' },
   { value: false, label: '未绑定' }
 ]
@@ -53,11 +53,11 @@ export default {
       listQuery: {
         page: 1,
         limit: 10,
-        bindTerminal: ''
+        bindEquipment: ''
       },
       tableData: [],
       total: 0,
-      bindTerminalList
+      bindEquipmentList
     }
   },
   created() {
@@ -81,7 +81,7 @@ export default {
       this.listQuery = {
         page: 1,
         limit: 10,
-        bindTerminal: ''
+        bindEquipment: ''
       }
     }
   }

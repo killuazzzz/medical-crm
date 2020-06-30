@@ -36,7 +36,11 @@
         <el-table-column label="甲乙设备类别名" prop="largeEqCategoryName" />
         <el-table-column label="医疗机构" prop="institutionName" />
         <el-table-column label="地级市" prop="cityName" />
-        <el-table-column label="启用日期" prop="activationDate" />
+        <el-table-column label="启用日期" prop="activationDate">
+          <template slot-scope="scope">
+            {{ scope.row.activationDate | parseTime('{y}-{m}-{d}') }}
+          </template>
+        </el-table-column>
         <el-table-column label="操作" prop="action" fixed="right" width="300">
           <template slot-scope="scope">
             <HButton :permission="pBenefit.month.monthList" type="check" @click="handleCheckMonth(scope.row)">查看月报表</HButton>

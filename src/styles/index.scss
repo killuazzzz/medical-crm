@@ -208,13 +208,3 @@ aside {
 .multiselect--active {
   z-index: 1000 !important;
 }
-form[name="listQuery"] {
-  .el-cascader {
-    width: 100%;
-  }
-}
-form[name="actionForm"] {
-  .el-input__inner {
-    width: 220px;
-  }
-}

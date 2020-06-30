@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchOperationList(data) {
   return request({
-    url: '/public/hardware/queryTerminalWorkParams',
+    url: '/equipment/web/param/queryTerminalWorkParams',
     method: 'post',
     data
   })

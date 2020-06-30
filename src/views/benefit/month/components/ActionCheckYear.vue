@@ -11,17 +11,17 @@
         <el-table class="mt-20" :data="tableData1" border>
           <el-table-column prop="monthTime" label="日期" width="150" fixed="left">
             <template slot-scope="scope">
-              {{ scope.row.monthTime | parseTime('{y}年{m}月') }}
+              {{ scope.row.monthTime | parseTime('{y}年') }}
             </template>
           </el-table-column>
-          <el-table-column v-for="(item, index) in monthsTemplete" :key="index" width="60" :prop="`months[${index + 1}]`" :label="`${index + 1}日`" />
+          <el-table-column v-for="(item, index) in monthsTemplete" :key="index" width="60" :prop="`months[${index + 1}]`" :label="`${index + 1}月`" />
         </el-table>
       </el-tab-pane>
       <el-tab-pane label="工作时长" name="2">
         <el-table class="mt-20" :data="tableData2" border>
           <el-table-column prop="monthTime" label="日期" width="150" fixed="left">
             <template slot-scope="scope">
-              {{ scope.row.monthTime | parseTime('{y}年{m}月') }}
+              {{ scope.row.monthTime | parseTime('{y}年') }}
             </template>
           </el-table-column>
           <el-table-column v-for="(item, index) in monthsTemplete" :key="index" width="60" :prop="`months[${index + 1}]`" :label="`${index + 1}月`" />

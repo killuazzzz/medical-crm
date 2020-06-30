@@ -36,7 +36,11 @@
         <el-table-column label="甲乙设备类别名" prop="largeEqCategoryName" />
         <el-table-column label="医疗机构" prop="institutionName" />
         <el-table-column label="地级市" prop="cityName" />
-        <el-table-column label="启用日期" prop="activationDate" />
+        <el-table-column label="启用日期" prop="activationDate">
+          <template slot-scope="scope">
+            {{ scope.row.activationDate | parseTime('{y}-{m}-{d}') }}
+          </template>
+        </el-table-column>
         <el-table-column label="原值" prop="originalValue" />
         <el-table-column label="操作" prop="action" fixed="right" width="240">
           <template slot-scope="scope">

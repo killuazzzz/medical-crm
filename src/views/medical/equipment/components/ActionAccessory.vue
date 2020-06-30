@@ -14,29 +14,17 @@
             <el-form-item label="运输与存储要求">
               <span>{{ props.row.claim }}</span>
             </el-form-item>
-            <el-form-item label="联系方式">
-              <span>{{ props.row.contactDetails }}</span>
-            </el-form-item>
-            <el-form-item label="联系人姓名">
-              <span>{{ props.row.contactName }}</span>
-            </el-form-item>
             <el-form-item label="创建人">
               <span>{{ props.row.createUserName }}</span>
             </el-form-item>
             <el-form-item label="生产商">
               <span>{{ props.row.manufacturer }}</span>
             </el-form-item>
-            <el-form-item label="生产商地址">
-              <span>{{ props.row.manufacturerArea }}</span>
-            </el-form-item>
             <el-form-item label="创建时间">
               <span>{{ props.row.createTime }}</span>
             </el-form-item>
             <el-form-item label="供应商">
               <span>{{ props.row.supplier }}</span>
-            </el-form-item>
-            <el-form-item label="供应商地址">
-              <span>{{ props.row.supplierArea }}</span>
             </el-form-item>
             <el-form-item label="配套用途">
               <span>{{ props.row.supportingUses }}</span>

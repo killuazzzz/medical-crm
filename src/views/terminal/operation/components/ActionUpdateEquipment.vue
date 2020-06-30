@@ -11,7 +11,7 @@
 
       <el-form-item label="设备" prop="equipmentId">
         <el-select v-model="formList.equipmentId">
-          <el-option v-for="item in equipmentList" :key="item.equipmentId" :value="item.equipmentId" :label="item.deviceName" />
+          <el-option v-for="item in equipmentList" :key="item.id" :value="item.id" :label="item.eqName" />
         </el-select>
       </el-form-item>
 
@@ -25,7 +25,7 @@
 
 <script>
 import { fetchOperationBind } from '@/api/terminal/operation'
-import { fetchMaintenanceList } from '@/api/terminal/maintenance'
+import { fetchEquipmentList } from '@/api/medical/equipment'
 import { selectValidator } from '@/utils/validate'
 
 export default {
@@ -69,10 +69,11 @@ export default {
       })
     },
     getEquipmentList() {
-      fetchMaintenanceList({
+      fetchEquipmentList({
         page: 1,
         limit: 10000,
-        bindTerminal: false
+        eqName: '',
+        largeEqCategory: ''
       }).then(res => {
         this.equipmentList = res.data.list
       })

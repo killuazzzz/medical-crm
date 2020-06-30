@@ -90,7 +90,7 @@ export default {
             center: ['50%', '45%'],
             data: seriesData,
             animationEasing: 'cubicInOut',
-            animationDuration: 2600,
+            animationDuration: 1000,
             labelLine: {
               show: false
             },

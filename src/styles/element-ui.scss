@@ -88,11 +88,25 @@
 }
 
 form[name="listQuery"] {
+  .el-cascader {
+    width: 100%;
+  }
+
   .el-select {
     width: 100%;
   }
 
   .el-date-editor.el-input, .el-date-editor.el-input__inner {
     width: 100%;
+  }
+}
+
+form[name="actionForm"] {
+  .el-input__inner {
+    width: 220px;
+  }
+
+  .input-append .el-input__inner {
+    width: 153px;
   }
 }

@@ -67,7 +67,7 @@
       </el-form>
       <el-table class="mt-20" :data="tableData" border>
 
-        <el-table-column v-if="listQuery.type === 1" label="地级市" prop="cityName" />
+        <el-table-column v-if="type === 1" label="地级市" prop="cityName" />
         <el-table-column v-else label="医疗机构" prop="institutionName" />
 
         <el-table-column label="设备台数" prop="eqNum" />
@@ -87,7 +87,7 @@
             </template>
           </el-table-column>
         </el-table-column>
-        <el-table-column label="机时利用率">
+        <el-table-column label="机时利用指标">
           <el-table-column label="空转率" prop="machineTimeIdleRate">
             <template slot-scope="scope">
               {{ scope.row.machineTimeIdleRate | addUnit('%') }}
@@ -142,6 +142,7 @@ export default {
         classifyId: '',
         largeEqCategoryId: ''
       },
+      type: 1,
       tableData: [],
       largeEqCategoryList: [],
       cityList: [],
@@ -162,6 +163,7 @@ export default {
   methods: {
     getList(data) {
       fetchKpiEffectiveness(this.listQuery).then(res => {
+        this.type = this.listQuery.type
         this.tableData = res.data
       })
     },
@@ -202,7 +204,7 @@ export default {
     },
     handleCheckEfficiency(data) {
       const { type } = this.listQuery
-      this.$refs.ActionCheckEfficiency.openDialog(type, { ...data.efficiency })
+      this.$refs.ActionCheckEfficiency.openDialog(type, { ...data })
     },
     handleCheckPeak(data) {
       this.$refs.ActionCheckPeak.openDialog({ ...data.dayDetails })
