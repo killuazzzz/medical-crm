@@ -67,46 +67,46 @@
       </el-form>
       <el-table class="mt-20" :data="tableData" border>
 
-        <el-table-column v-if="type === 1" label="地级市" prop="cityName" />
-        <el-table-column v-else label="医疗机构" prop="institutionName" />
+        <el-table-column v-if="type === 1" align="center" show-overflow-tooltip label="地级市" prop="cityName" />
+        <el-table-column v-else align="center" show-overflow-tooltip label="医疗机构" prop="institutionName" />
 
-        <el-table-column label="设备台数" prop="eqNum" />
-        <el-table-column label="各状态台数">
-          <el-table-column label="开机台数" prop="bootNum" />
-          <el-table-column label="工作台数" prop="workNum" />
+        <el-table-column align="center" show-overflow-tooltip label="设备台数" prop="eqNum" />
+        <el-table-column align="center" show-overflow-tooltip label="各状态台数">
+          <el-table-column align="center" show-overflow-tooltip label="开机台数" prop="bootNum" />
+          <el-table-column align="center" show-overflow-tooltip label="工作台数" prop="workNum" />
         </el-table-column>
-        <el-table-column label="数量利用指标">
-          <el-table-column label="开机率" prop="numbootRate">
+        <el-table-column align="center" show-overflow-tooltip label="数量利用指标">
+          <el-table-column align="center" show-overflow-tooltip label="开机率" prop="numbootRate">
             <template slot-scope="scope">
               {{ scope.row.numbootRate | addUnit('%') }}
             </template>
           </el-table-column>
-          <el-table-column label="利用率" prop="numUseRate">
+          <el-table-column align="center" show-overflow-tooltip label="利用率" prop="numUseRate">
             <template slot-scope="scope">
               {{ scope.row.numUseRate | addUnit('%') }}
             </template>
           </el-table-column>
         </el-table-column>
-        <el-table-column label="机时利用指标">
-          <el-table-column label="空转率" prop="machineTimeIdleRate">
+        <el-table-column align="center" show-overflow-tooltip label="机时利用指标">
+          <el-table-column align="center" show-overflow-tooltip label="空转率" prop="machineTimeIdleRate">
             <template slot-scope="scope">
               {{ scope.row.machineTimeIdleRate | addUnit('%') }}
             </template>
           </el-table-column>
-          <el-table-column label="利用率" prop="machineTimeUseRate">
+          <el-table-column align="center" show-overflow-tooltip label="利用率" prop="machineTimeUseRate">
             <template slot-scope="scope">
               {{ scope.row.machineTimeUseRate | addUnit('%') }}
             </template>
           </el-table-column>
         </el-table-column>
-        <el-table-column label="功效利用指标">
-          <el-table-column label="利用率" prop="effectUseRate">
+        <el-table-column align="center" show-overflow-tooltip label="功效利用指标">
+          <el-table-column align="center" show-overflow-tooltip label="利用率" prop="effectUseRate">
             <template slot-scope="scope">
               {{ scope.row.effectUseRate | addUnit('%') }}
             </template>
           </el-table-column>
         </el-table-column>
-        <el-table-column label="操作" prop="action" fixed="right" width="300">
+        <el-table-column align="center" label="操作" prop="action" fixed="right" width="300">
           <template slot-scope="scope">
             <!-- <HButton :permission="pBenefit.exponent.efficiency" type="check" @click="handleCheckExponent(scope.row)">医疗装备效率指数查询</HButton> -->
             <HButton type="check" @click="handleCheckEfficiency(scope.row)">使用效率分析</HButton>

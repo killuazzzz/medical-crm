@@ -37,27 +37,27 @@
         </el-row>
       </el-form>
       <el-table class="mt-20" :data="tableData" border>
-        <el-table-column label="序号" prop="terminalId" />
-        <el-table-column label="医疗机构" prop="orgName" />
-        <el-table-column label="设备名称" prop="terminalName" />
-        <el-table-column label="规格型号" prop="specs">
+        <el-table-column align="center" show-overflow-tooltip label="序号" prop="terminalId" />
+        <el-table-column align="center" show-overflow-tooltip label="医疗机构" prop="orgName" />
+        <el-table-column align="center" show-overflow-tooltip label="设备名称" prop="terminalName" />
+        <el-table-column align="center" show-overflow-tooltip label="规格型号" prop="specs">
           <template slot-scope="scope">
             {{ scope.row.specs }} {{ scope.row.model }}
           </template>
         </el-table-column>
-        <el-table-column label="核定工时" prop="approvedMillis">
+        <el-table-column align="center" show-overflow-tooltip label="核定工时" prop="approvedMillis">
           <template slot-scope="scope">
             {{ scope.row.approvedMillis | millisecondToOther }}
           </template>
         </el-table-column>
-        <el-table-column label="值班时长" prop="dutyMillis">
+        <el-table-column align="center" show-overflow-tooltip label="值班时长" prop="dutyMillis">
           <template slot-scope="scope">
             {{ scope.row.dutyMillis | millisecondToOther }}
           </template>
         </el-table-column>
-        <el-table-column label="开机次数" prop="openCount" />
-        <el-table-column label="关机次数" prop="closeCount" />
-        <el-table-column label="操作" prop="action" fixed="right" width="150">
+        <el-table-column align="center" show-overflow-tooltip label="开机次数" prop="openCount" />
+        <el-table-column align="center" show-overflow-tooltip label="关机次数" prop="closeCount" />
+        <el-table-column align="center" label="操作" prop="action" fixed="right" width="150">
           <template slot-scope="scope">
             <HButton :permission="pMonitoring.run.view" type="check" @click="handleCheck(scope.row)">查看详情</HButton>
           </template>

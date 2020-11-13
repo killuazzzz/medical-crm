@@ -2,51 +2,51 @@
   <div>
     <el-card>
       <el-table class="mt-20" :data="tableData" border>
-        <el-table-column label="设备编号" width="200" prop="deviceNumber" />
-        <el-table-column label="终端代码" width="200" prop="terminalCode" />
-        <el-table-column label="医疗机构名称" width="200" prop="hospitalName" />
-        <el-table-column label="设备名称" prop="deviceName" />
-        <el-table-column label="保持时间" prop="holdTime">
+        <el-table-column align="center" show-overflow-tooltip label="设备编号" width="200" prop="deviceNumber" />
+        <el-table-column align="center" show-overflow-tooltip label="终端代码" width="200" prop="terminalCode" />
+        <el-table-column align="center" show-overflow-tooltip label="医疗机构名称" width="200" prop="hospitalName" />
+        <el-table-column align="center" show-overflow-tooltip label="设备名称" prop="deviceName" />
+        <el-table-column align="center" show-overflow-tooltip label="保持时间" prop="holdTime">
           <template slot-scope="scope">
             {{ scope.row.holdTime | secondText }}
           </template>
         </el-table-column>
-        <el-table-column label="停止时间" prop="stopTime">
+        <el-table-column align="center" show-overflow-tooltip label="停止时间" prop="stopTime">
           <template slot-scope="scope">
             {{ scope.row.stopTime | secondText }}
           </template>
         </el-table-column>
-        <el-table-column label="启动电流" prop="startingCurrent" />
-        <el-table-column label="结束电流" prop="endCurrent" />
-        <el-table-column label="接近距离" prop="approachDistance" />
-        <el-table-column label="远离距离" prop="farDistance" />
-        <el-table-column label="图像启动" prop="imageStart" />
-        <el-table-column label="图像结束" prop="imageEnd" />
-        <el-table-column label="重量启动" prop="weightStart" />
-        <el-table-column label="重量结束" prop="weightEnd" />
-        <el-table-column label="光电计数比例" width="200" prop="photoelectricProportion" />
-        <el-table-column label="心跳包间隔时间" width="200" prop="heartbeatInterval">
+        <el-table-column align="center" show-overflow-tooltip label="启动电流" prop="startingCurrent" />
+        <el-table-column align="center" show-overflow-tooltip label="结束电流" prop="endCurrent" />
+        <el-table-column align="center" show-overflow-tooltip label="接近距离" prop="approachDistance" />
+        <el-table-column align="center" show-overflow-tooltip label="远离距离" prop="farDistance" />
+        <el-table-column align="center" show-overflow-tooltip label="图像启动" prop="imageStart" />
+        <el-table-column align="center" show-overflow-tooltip label="图像结束" prop="imageEnd" />
+        <el-table-column align="center" show-overflow-tooltip label="重量启动" prop="weightStart" />
+        <el-table-column align="center" show-overflow-tooltip label="重量结束" prop="weightEnd" />
+        <el-table-column align="center" show-overflow-tooltip label="光电计数比例" width="200" prop="photoelectricProportion" />
+        <el-table-column align="center" show-overflow-tooltip label="心跳包间隔时间" width="200" prop="heartbeatInterval">
           <template slot-scope="scope">
             {{ scope.row.heartbeatInterval | secondText }}
           </template>
         </el-table-column>
-        <el-table-column label="数据包间隔时间" width="200" prop="resendInterval">
+        <el-table-column align="center" show-overflow-tooltip label="数据包间隔时间" width="200" prop="resendInterval">
           <template slot-scope="scope">
             {{ scope.row.resendInterval | secondText }}
           </template>
         </el-table-column>
-        <el-table-column label="电流上限" prop="upperCurrentLimit" />
-        <el-table-column label="检查类型" prop="workType">
+        <el-table-column align="center" show-overflow-tooltip label="电流上限" prop="upperCurrentLimit" />
+        <el-table-column align="center" show-overflow-tooltip label="检查类型" prop="workType">
           <template slot-scope="scope">
             {{ scope.row.workType | workTypeText }}
           </template>
         </el-table-column>
-        <el-table-column label="是否绑定设备" prop="bindEquipment">
+        <el-table-column align="center" show-overflow-tooltip label="是否绑定设备" width="120" prop="bindEquipment">
           <template slot-scope="scope">
             {{ scope.row.bindEquipment | bindEquipmentText }}
           </template>
         </el-table-column>
-        <el-table-column label="操作" prop="action" fixed="right" width="400">
+        <el-table-column align="center" label="操作" prop="action" fixed="right" width="380">
           <template slot-scope="scope">
             <HButton :permission="pTerminal.operation.update" type="update" @click="handleUpdate(scope.row)" />
             <HButton :permission="pTerminal.operation.view" type="check" @click="handleCheck(scope.row)" />

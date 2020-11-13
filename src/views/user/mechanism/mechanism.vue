@@ -29,13 +29,13 @@
         <HButton :permission="pUser.mechanism.add" type="add" @click="handleAdd" />
       </el-row>
       <el-table class="mt-20" :data="tableData" border>
-        <el-table-column label="区域编号" prop="cityId" />
-        <el-table-column label="医疗机构名称" prop="institutionName" />
-        <el-table-column label="医疗机构执业证号" prop="licenseCode" />
-        <el-table-column label="联系人" prop="principal" />
-        <el-table-column label="负责人电话" prop="contactPhone" />
-        <el-table-column label="医疗机构地址" prop="hospitalAddress" />
-        <el-table-column label="操作" fixed="right" min-width="200" prop="action">
+        <el-table-column align="center" show-overflow-tooltip label="区域编号" prop="cityId" />
+        <el-table-column align="center" show-overflow-tooltip label="医疗机构名称" prop="institutionName" />
+        <el-table-column align="center" show-overflow-tooltip label="医疗机构执业证号" prop="licenseCode" />
+        <el-table-column align="center" show-overflow-tooltip label="联系人" prop="principal" />
+        <el-table-column align="center" show-overflow-tooltip label="负责人电话" prop="contactPhone" />
+        <el-table-column align="center" show-overflow-tooltip label="医疗机构地址" prop="hospitalAddress" />
+        <el-table-column align="center" show-overflow-tooltip label="操作" fixed="right" width="200" prop="action">
           <template slot-scope="scope">
             <HButton :permission="pUser.mechanism.update" type="update" @click="handleUpdate(scope.row)" />
             <HButton :permission="pUser.mechanism.view" type="check" @click="handleCheck(scope.row)" />

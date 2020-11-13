@@ -19,15 +19,15 @@
         </el-row>
       </el-form>
       <el-table class="mt-20" :data="tableData" border>
-        <el-table-column label="设备编号" width="200" prop="deviceNumber" />
-        <el-table-column label="终端代码" width="200" prop="terminalCode" />
-        <el-table-column label="医疗机构名称" width="200" prop="hospitalName" />
-        <el-table-column label="设备名称" prop="deviceName" />
-        <el-table-column label="预测科研量" prop="forecastResearch" />
-        <el-table-column label="预测工作量" prop="forecastWorkload" />
-        <el-table-column label="标准机时" prop="standardTime" />
-        <el-table-column label="终端IP" prop="terminalHost" />
-        <el-table-column label="终端端口" prop="terminalPort" />
+        <el-table-column align="center" show-overflow-tooltip label="设备编号" width="200" prop="deviceNumber" />
+        <el-table-column align="center" show-overflow-tooltip label="终端代码" width="200" prop="terminalCode" />
+        <el-table-column align="center" show-overflow-tooltip label="医疗机构名称" width="200" prop="hospitalName" />
+        <el-table-column align="center" show-overflow-tooltip label="设备名称" prop="deviceName" />
+        <el-table-column align="center" show-overflow-tooltip label="预测科研量" prop="forecastResearch" />
+        <el-table-column align="center" show-overflow-tooltip label="预测工作量" prop="forecastWorkload" />
+        <el-table-column align="center" show-overflow-tooltip label="标准机时" prop="standardTime" />
+        <el-table-column align="center" show-overflow-tooltip label="终端IP" prop="terminalHost" />
+        <el-table-column align="center" show-overflow-tooltip label="终端端口" prop="terminalPort" />
       </el-table>
       <pagination :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getList" />
     </el-card>

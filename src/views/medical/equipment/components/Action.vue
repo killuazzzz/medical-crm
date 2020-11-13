@@ -2,15 +2,15 @@
   <el-dialog
     :title="dialogTitle[dialogType]"
     :visible.sync="dialogVisible"
-    width="850px"
+    width="1200px"
     :close-on-click-modal="false"
     @closed="closeEvent"
     @opened="openEvent"
   >
     <div>
-      <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="left" label-width="150px" :disabled="dialogType === 2">
-        <el-collapse v-model="collapseActives">
-          <el-collapse-item title="设备基础信息" name="1">
+      <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="right" label-width="140px" :disabled="dialogType === 2">
+        <el-tabs v-model="activeName" type="card">
+          <el-tab-pane label="设备基础信息" name="1">
 
             <el-form-item label="设备名称" prop="eqName">
               <el-input v-model="formList.eqName" />
@@ -232,8 +232,8 @@
                 <el-option v-for="item in booleanList" :key="item.value" :value="item.value" :label="item.label" />
               </el-select>
             </el-form-item> -->
-          </el-collapse-item>
-          <el-collapse-item title="设备效率与效益设置" name="2">
+          </el-tab-pane>
+          <el-tab-pane label="设备效率与效益设置" name="2">
 
             <el-form-item label="设备值班时长（日）" prop="dutyDuration">
               <el-input v-model="formList.dutyDuration" type="number" class="input-append">
@@ -263,9 +263,8 @@
               <el-input v-model="formList.researchNum" type="number" />
             </el-form-item>
 
-          </el-collapse-item>
-        </el-collapse>
-
+          </el-tab-pane>
+        </el-tabs>
       </el-form>
     </div>
     <div v-if="dialogType !== 2" slot="footer">
@@ -350,7 +349,7 @@ export default {
         originalValue: inputValidator
       },
       loading: false,
-      collapseActives: ['1'],
+      activeName: '1',
       largeEqCategoryList: [],
       brandNameList: [],
       unitList: [],

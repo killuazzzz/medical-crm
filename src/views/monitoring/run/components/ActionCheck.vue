@@ -54,19 +54,19 @@
 
     </el-form>
     <el-table class="mt-20" :data="tableData" border>
-      <el-table-column label="序号">
+      <el-table-column align="center" show-overflow-tooltip label="序号">
         <template slot-scope="scope">
           {{ scope.$index + 1 }}
         </template>
       </el-table-column>
-      <el-table-column prop="beginTime" label="开始时间" />
-      <el-table-column prop="endTime" label="结束时间" />
-      <el-table-column prop="holdTime" label="持续时间">
+      <el-table-column prop="beginTime" align="center" show-overflow-tooltip label="开始时间" />
+      <el-table-column prop="endTime" align="center" show-overflow-tooltip label="结束时间" />
+      <el-table-column prop="holdTime" align="center" show-overflow-tooltip label="持续时间">
         <template slot-scope="scope">
           {{ scope.row.holdTime | millisecondToOther }}
         </template>
       </el-table-column>
-      <el-table-column prop="workStatus" label="状态">
+      <el-table-column prop="workStatus" align="center" show-overflow-tooltip label="状态">
         <template slot-scope="scope">
           {{ scope.row.workStatus | enumValue(stateList) }}
         </template>

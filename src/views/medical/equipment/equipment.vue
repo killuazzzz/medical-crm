@@ -27,25 +27,25 @@
         <HButton :permission="pMedical.equipment.add" type="add" @click="handleAdd">新增设备</HButton>
       </el-row>
       <el-table class="mt-20" :data="tableData" border>
-        <el-table-column label="序号" prop="id" />
-        <el-table-column label="设备名称" prop="eqName" />
-        <el-table-column label="规格型号" prop="model">
+        <el-table-column align="center" show-overflow-tooltip label="序号" prop="id" />
+        <el-table-column align="center" show-overflow-tooltip label="设备名称" prop="eqName" />
+        <el-table-column align="center" show-overflow-tooltip label="规格型号" prop="model">
           <template slot-scope="scope">
             {{ scope.row.specs }} {{ scope.row.model }}
           </template>
         </el-table-column>
-        <el-table-column label="原值" prop="originalValue" />
-        <el-table-column label="启用日期" prop="activationDate">
+        <el-table-column align="center" show-overflow-tooltip label="原值" prop="originalValue" />
+        <el-table-column align="center" show-overflow-tooltip label="启用日期" prop="activationDate">
           <template slot-scope="scope">
             {{ scope.row.activationDate | parseTime('{y}-{m}-{d}') }}
           </template>
         </el-table-column>
-        <el-table-column label="机构名称" prop="institutionName" />
-        <el-table-column label="院内编码" prop="inHospitalCode" />
-        <el-table-column label="分类编码" prop="classificationCode" />
-        <el-table-column label="产地" prop="area" />
-        <el-table-column label="供应商" prop="supplier" />
-        <el-table-column label="操作" prop="action" fixed="right" width="500">
+        <el-table-column align="center" show-overflow-tooltip label="机构名称" prop="institutionName" />
+        <el-table-column align="center" show-overflow-tooltip label="院内编码" prop="inHospitalCode" />
+        <el-table-column align="center" show-overflow-tooltip label="分类编码" prop="classificationCode" />
+        <el-table-column align="center" show-overflow-tooltip label="产地" prop="area" />
+        <el-table-column align="center" show-overflow-tooltip label="供应商" prop="supplier" />
+        <el-table-column align="center" label="操作" prop="action" fixed="right" width="440">
           <template slot-scope="scope">
             <HButton :permission="pMedical.equipment.update" type="update" @click="handleUpdate(scope.row)" />
             <HButton :permission="pMedical.equipment.view" type="check" @click="handleCheck(scope.row)" />

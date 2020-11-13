@@ -66,8 +66,8 @@ export default {
   data() {
     return {
       loginForm: {
-        account: 'aaaaaa',
-        password: '123456'
+        account: undefined,
+        password: undefined
       },
       loginRules: {
         account: [{ required: true, trigger: 'blur' }],

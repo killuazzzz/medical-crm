@@ -191,12 +191,12 @@ export const constantRoutes = [
         name: 'MonitoringRun',
         meta: { title: '医疗设备运行日志' }
       },
-      {
-        path: 'off',
-        component: () => import('@/views/monitoring/off/off'),
-        name: 'MonitoringOff',
-        meta: { title: '医疗设备离线状态查询' }
-      },
+      // {
+      //   path: 'off',
+      //   component: () => import('@/views/monitoring/off/off'),
+      //   name: 'MonitoringOff',
+      //   meta: { title: '医疗设备离线状态查询' }
+      // },
       {
         path: 'month',
         component: () => import('@/views/monitoring/month/month'),

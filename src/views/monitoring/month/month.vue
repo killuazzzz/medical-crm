@@ -41,7 +41,7 @@
       </h3>
       <el-table class="mt-10 mb-20" :data="tableData" border>
         <template v-for="(item, index) in tableTemplate">
-          <el-table-column :key="index" :label="index === 0 ? '日期' : `${index}日`" :prop="`day${index}`" />
+          <el-table-column :key="index" :label="index === 0 ? '日期' : `${index}日`" :prop="`day${index}`" align="center" :width="index === 0 ? 100 : 55" />
         </template>
       </el-table>
       <el-card>

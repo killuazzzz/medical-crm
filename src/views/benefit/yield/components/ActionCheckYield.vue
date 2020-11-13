@@ -7,10 +7,10 @@
     @close="closeEvent"
   >
     <el-table :data="tableData" border>
-      <el-table-column prop="checkCount" label="诊疗项次" />
-      <el-table-column prop="income" label="收入" />
-      <el-table-column prop="payback" label="回本期" />
-      <el-table-column prop="yearTime" label="年份" />
+      <el-table-column align="center" show-overflow-tooltip prop="checkCount" label="诊疗项次" />
+      <el-table-column align="center" show-overflow-tooltip prop="income" label="收入" />
+      <el-table-column align="center" show-overflow-tooltip prop="payback" label="回本期" />
+      <el-table-column align="center" show-overflow-tooltip prop="yearTime" label="年份" />
     </el-table>
     <div slot="footer">
       <el-button @click="handleCancel">取 消</el-button>

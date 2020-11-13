@@ -31,18 +31,18 @@
         </el-row>
       </el-form>
       <el-table class="mt-20" :data="tableData" border>
-        <el-table-column label="设备名称" prop="eqName" />
-        <el-table-column label="设备型号" prop="model" />
-        <el-table-column label="甲乙设备类别名" prop="largeEqCategoryName" />
-        <el-table-column label="医疗机构" prop="institutionName" />
-        <el-table-column label="地级市" prop="cityName" />
-        <el-table-column label="启用日期" prop="activationDate">
+        <el-table-column align="center" show-overflow-tooltip label="设备名称" prop="eqName" />
+        <el-table-column align="center" show-overflow-tooltip label="设备型号" prop="model" />
+        <el-table-column align="center" show-overflow-tooltip label="甲乙设备类别名" prop="largeEqCategoryName" />
+        <el-table-column align="center" show-overflow-tooltip label="医疗机构" prop="institutionName" />
+        <el-table-column align="center" show-overflow-tooltip label="地级市" prop="cityName" />
+        <el-table-column align="center" show-overflow-tooltip label="启用日期" prop="activationDate">
           <template slot-scope="scope">
             {{ scope.row.activationDate | parseTime('{y}-{m}-{d}') }}
           </template>
         </el-table-column>
-        <el-table-column label="原值" prop="originalValue" />
-        <el-table-column label="操作" prop="action" fixed="right" width="240">
+        <el-table-column align="center" show-overflow-tooltip label="原值" prop="originalValue" />
+        <el-table-column align="center" label="操作" prop="action" fixed="right" width="200">
           <template slot-scope="scope">
             <HButton :permission="pBenefit.yield.profit" type="check" @click="handleCheckYield(scope.row)">医疗装备收益率查询</HButton>
           </template>

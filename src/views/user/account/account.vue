@@ -39,13 +39,13 @@
         </el-upload>
         <HButton :permission="pUser.account.downloadExcel" class="ml-10" type="download" @click="handleDownload">下载Excel模板</HButton>
       </el-row>
-      <el-table class="mt-20" :data="tableData" border>
-        <el-table-column label="账号" prop="account" />
-        <el-table-column label="所属科室名称" prop="departmentName" />
-        <el-table-column label="所属医疗机构名称" prop="orgName" />
-        <el-table-column label="用户名称" prop="userName" />
-        <el-table-column label="角色名称" prop="roleName" />
-        <el-table-column label="操作" prop="action" width="500">
+      <el-table class="mt-20" :data="tableData" border stripe>
+        <el-table-column align="center" show-overflow-tooltip label="账号" prop="account" />
+        <el-table-column align="center" show-overflow-tooltip label="所属科室名称" prop="departmentName" />
+        <el-table-column align="center" show-overflow-tooltip label="所属医疗机构名称" prop="orgName" />
+        <el-table-column align="center" show-overflow-tooltip label="用户名称" prop="userName" />
+        <el-table-column align="center" show-overflow-tooltip label="角色名称" prop="roleName" />
+        <el-table-column align="center" show-overflow-tooltip label="操作" prop="action" width="400">
           <template slot-scope="scope">
             <HButton :permission="pUser.account.updateRole" type="update" @click="handleRole(scope.row)">编辑角色</HButton>
             <HButton :permission="pUser.account.updateDepartment" type="update" @click="handleDepartment(scope.row)">编辑科室</HButton>

@@ -2,29 +2,29 @@
   <el-dialog
     :title="`${eqName}-${institutionName}-年报表`"
     :visible.sync="dialogVisible"
-    width="900px"
+    width="800px"
     :close-on-click-modal="false"
     @close="closeEvent"
   >
     <el-tabs v-model="tabName" @tab-click="handleTabs">
       <el-tab-pane label="工作量" name="1">
         <el-table class="mt-20" :data="tableData1" border>
-          <el-table-column prop="monthTime" label="日期" width="150" fixed="left">
+          <el-table-column prop="monthTime" align="center" show-overflow-tooltip label="日期" width="100" fixed="left">
             <template slot-scope="scope">
               {{ scope.row.monthTime | parseTime('{y}年') }}
             </template>
           </el-table-column>
-          <el-table-column v-for="(item, index) in monthsTemplete" :key="index" width="60" :prop="`months[${index + 1}]`" :label="`${index + 1}月`" />
+          <el-table-column v-for="(item, index) in monthsTemplete" :key="index" width="55" align="center" show-overflow-tooltip :prop="`months[${index + 1}]`" :label="`${index + 1}月`" />
         </el-table>
       </el-tab-pane>
       <el-tab-pane label="工作时长" name="2">
         <el-table class="mt-20" :data="tableData2" border>
-          <el-table-column prop="monthTime" label="日期" width="150" fixed="left">
+          <el-table-column prop="monthTime" align="center" show-overflow-tooltip label="日期" width="100" fixed="left">
             <template slot-scope="scope">
               {{ scope.row.monthTime | parseTime('{y}年') }}
             </template>
           </el-table-column>
-          <el-table-column v-for="(item, index) in monthsTemplete" :key="index" width="60" :prop="`months[${index + 1}]`" :label="`${index + 1}月`" />
+          <el-table-column v-for="(item, index) in monthsTemplete" :key="index" align="center" show-overflow-tooltip width="55" :prop="`months[${index + 1}]`" :label="`${index + 1}月`" />
         </el-table>
       </el-tab-pane>
     </el-tabs>

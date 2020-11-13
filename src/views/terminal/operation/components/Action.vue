@@ -2,12 +2,12 @@
   <el-dialog
     :title="dialogTitle[dialogType]"
     :visible.sync="dialogVisible"
-    width="800px"
+    width="1200px"
     :close-on-click-modal="false"
     @close="closeEvent"
   >
 
-    <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="top" :disabled="dialogType === 2">
+    <el-form ref="formList" :model="formList" :rules="rules" name="actionForm" :inline="true" label-position="right" label-width="130px" :disabled="dialogType === 2">
 
       <el-form-item label="医疗设备名称">
         <el-input v-model="formList.hospitalName" readonly="" />
